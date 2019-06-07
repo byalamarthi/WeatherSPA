@@ -1,0 +1,38 @@
+/* Styles for Weather App */
+
+body {
+  font-family: Century Gothic, sans-serif;
+}
+
+h1 {
+  border: solid;
+  border-width: 1px 0px 1px 0px;
+}
+
+td {
+  text-align: right;
+}
+
+.oddColumn {
+  background-color: #F0F0F0;
+}
+
+.evenColumn { 
+  background-color: #E0E0E0;
+}
+
+
+
+.condition {
+  font-size: x-large;
+}
+
+.disabled {
+  display: none;
+}
+
+.error {
+  color: darkred;
+  font-style: italic;
+}
+

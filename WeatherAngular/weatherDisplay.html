@@ -1,0 +1,51 @@
+<!-- HTML for displaying the weather in a location -->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+
+<!--<div class="condition">{{vm.Condition}}</div>-->
+<table style="border:1px solid black">
+  <thead>
+      <tr >
+          <th></th>
+          
+          <th class="oddColumn">00:00:00</th>
+          <th class="evenColumn">03:00:00</th>
+          <th class="oddColumn">06:00:00</th>
+          <th class="evenColumn">09:00:00</th>
+          <th class="oddColumn">12:00:00</th>
+          <th class="evenColumn">15:00:00</th>
+          <th class="evenColumn">18:00:00</th>
+          <th class="oddColumn">21:00:00</th>
+         
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Today</td>
+
+          <td ng-repeat="temp in vm.dayone">
+          {{temp.Temperatures[0].Current| number:1 }}&nbsp;{{temp.Main}}
+          </td>
+
+
+      </tr>
+      <tr>
+          <td>{{vm.date2format | date}}</td>
+          <td ng-repeat="temp in vm.daytwo">{{temp.Temperatures[0].Current| number:1 }}&nbsp;{{temp.weather}}</td>
+      </tr>
+      <tr>
+          <td>{{vm.date3format | date}}</td>
+          <td ng-repeat="temp in vm.daythree">{{temp.Temperatures[0].Current| number:1 }}&nbsp;{{temp.weather}}</td>
+      </tr>
+      <tr>
+          <td>{{vm.date4format | date}}</td>
+          <td ng-repeat="temp in vm.dayfour">{{temp.Temperatures[0].Current| number:1 }}&nbsp;{{temp.weather}}</td>
+      </tr>
+
+  </tbody>
+</table>
+
+

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+<head>
+
+
+    <script src="Scripts/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <!--<script src="app/script.js"></script>-->
+    <script src="app/weatherController.js"></script>
+    <script src="app/weatherService.js"></script>
+</head>
+
+<body ng-app='WeatherApp'>
+
+    <div ng-controller="main as vm">
+        <h1>Current weather in {{vm.City}}:{{vm.Currenttemp[0].Current| number:0}}&#8457; Next three days forecast: </h1>
+
+        <div ng-include="'weatherDisplay.html'" ng-show="vm.ValidDataLoaded"></div>
+       
+
+        <p class="error">
+            {{vm.error}}
+        </p>
+
+        <form name="weatherForm">
+            <input type="search" placeholder="Zipcode" required ng-model="vm.query" />
+            <input type="submit" value="Check Weather" ng-click="vm.Search()" />
+        </form>
+    </div>
+</body>
+
+</html>
